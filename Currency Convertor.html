@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title> "A simple convertor page!"</title>
+</head>
+<body>
+
+	<h1>How long have I been here: <span id="clock">0:00</span></h1>
+	<!-- //<textarea id="inputtxt" oninput=""> </textarea> -->
+	<input type="text" id="inputtxt">
+
+	<button id="btnToEuro" onclick="toEuro()">Click to convert into Euros</button>
+	<button id="btnToUSDollar" onclick="toUSDollar()">Click to convert to US Dollars</button>
+	<button id="btnJapaneseYen" onclick="toJapYen()">Click to convert to Japanese Yen</button>
+	<button id="btnBritishPound" onclick="toBritPound()">Click to convert to Pound Sterling</button>
+
+	<!-- <div id="output">
+		
+	</div> -->
+
+<script type="text/javascript">
+	
+	
+	
+
+	function toEuro()
+	{
+		//console.log(inputAmt);
+		
+	var inputAmt = document.getElementById("inputtxt").value;
+      let outputAmt = inputAmt / 81.44;
+      console.log(outputAmt);
+      alert("The entered value of Rupee corresponds to "+ outputAmt+"Euros.");
+	}
+
+	function toUSDollar()
+	{
+		var inputAmt = document.getElementById("inputtxt").value;
+		console.log(inputAmt);
+		let outputAmt = inputAmt / 71.41;
+		console.log(outputAmt);
+      alert("The entered value of Rupee corresponds to "+ outputAmt+"US Dollars.");
+	}
+ 	function toJapYen()
+	{
+		//console.log(inputAmt);
+		var inputAmt = document.getElementById("inputtxt").value;
+		let outputAmt = inputAmt / 0.63;
+		console.log(outputAmt);
+      alert("The entered value of Rupee corresponds to "+ outputAmt+"Japanese Yen.");
+	}
+ 	function toBritPound()
+	{
+		//console.log(inputAmt);
+		var inputAmt = document.getElementById("inputtxt").value;
+		let outputAmt = inputAmt / 90.74;
+		console.log(outputAmt);
+      alert("The entered value of Rupee corresponds to "+ outputAmt+"Pound Sterlings.");
+	}
+	var count = 0;
+	function SayHello(){
+		console.log("hello " + count)
+		count++
+		setTimeout(SayHello, 2000)
+	}
+	//SayHello();
+	var clock = document.getElementById("clock"); //0:00
+	var min = 0;
+	var sec = 0;
+
+	function DigitalC1()
+	{
+		console.log(sec);
+		var secStr = sec;
+		//min++;
+		if(sec<10 )
+		{
+			secStr="0"+sec;
+		}
+
+		else if(sec==60)
+		{
+			sec=0;
+			secStr="00"
+			min++;	
+		
+		}
+
+
+		
+
+		
+		clock.innerHTML=min+":"+secStr;
+		sec++;
+
+		setTimeout(DigitalC1,500);
+	}
+	DigitalC1();
+
+
+// 	var min = 0;
+// var sec = 0;
+// function time(){
+// 	if(sec<=9){
+// 		id.innerHTML=min+":"+"0"+sec;
+// 		}
+// 	else
+// 		{
+// 			id.innerHTML=min+":"+sec;
+// 		}
+// 		sec++;
+// 		if(sec==60){
+// 			min++;
+// 			sec=0;
+// 		}	
+
+
+
+// 	setTimeout(time,1000);
+// }
+// time()
+
+
+</script>
+
+</body>
+</html>
